@@ -1,4 +1,5 @@
  import * as THREE from 'https://cdn.skypack.dev/three@0.131.3';
+ import { OrbitControls } from 'https://cdn.skypack.dev/three@0.131.3/examples/jsm/controls/OrbitControls.js';
 
  //                                                                 -------------- Manera #1 --------------
 
@@ -36,6 +37,9 @@ function main() {
 
   scene.add(cube);
   console.log(objects);
+
+  // Controls
+  new OrbitControls(camera, renderer.domElement);
 
   //Movimiento
 
