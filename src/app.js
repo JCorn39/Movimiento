@@ -25,8 +25,11 @@ function main() {
   renderer.setClearColor(palette.bgColor, 1);
   document.body.appendChild(renderer.domElement);
 
-  camera.position.z = 90;
-  camera.position.y = 5;
+  camera.position.z = 100;
+  camera.position.y = 70;
+  camera.position.x = -70;
+
+  //camera.position.set(0,5,56);
 
   //cubo
   const geometry = new THREE.BoxGeometry(5, 5, 5, 2, 2, 2);
@@ -35,7 +38,7 @@ function main() {
 
   cube.position.y=5
   cube.position.x=0
-  cube.position.z=0
+  cube.position.z=60
   scene.add(cube);
   console.log(objects);
 
@@ -262,39 +265,79 @@ function main() {
     console.log(e.key)
       switch (tecla) {
         case 'ArrowRight':
-         camera.position.x=camera.position.x-0.5;
+          cube.position.x=cube.position.x+0.5;
         break;
         case 'ArrowLeft':
-         camera.position.x=camera.position.x+0.5;
+          cube.position.x=cube.position.x-0.5;
         break;
         case 'ArrowUp':
-         camera.position.z=camera.position.z-0.5;
+          cube.position.z=cube.position.z-0.5;
         break;
         case 'ArrowDown':
-         camera.position.z=camera.position.z+0.5;
+          cube.position.z=cube.position.z+0.5;
         break;
        case 'd':
-         camera.position.x=camera.position.x-0.5;
+        cube.position.x=cube.position.x-0.5;
        break;
        case 'a':
-         camera.position.x=camera.position.x+0.5;
+        cube.position.x=cube.position.x+0.5;
        break;
        case 'w':
-         camera.position.z=camera.position.z-0.5;
+        cube.position.z=cube.position.z-0.5;
        break;
        case 's':
-         camera.position.z=camera.position.z+0.5;
+        cube.position.z=cube.position.z+0.5;
        break;
        case 'q':
-         camera.rotation.y=camera.rotation.y-0.5;
+        cube.rotation.y=cube.rotation.y-0.5;
         break;
         case 'e':
-         camera.rotation.y=camera.rotation.y+0.5;
+          cube.rotation.y=cube.rotation.y+0.5;
         break;
        default:
        break;
      }
  })
+
+ /* window.addEventListener('keydown',(e)=>{
+  let tecla=e.key
+   console.log(e.key)
+     switch (tecla) {
+       case 'ArrowRight':
+         camera.position.x=camera.position.x+0.5;
+       break;
+       case 'ArrowLeft':
+        camera.position.x=camera.position.x-0.5;
+       break;
+       case 'ArrowUp':
+        camera.position.z=camera.position.z-0.5;
+       break;
+       case 'ArrowDown':
+        camera.position.z=camera.position.z+0.5;
+       break;
+      case 'd':
+        camera.position.x=camera.position.x-0.5;
+      break;
+      case 'a':
+        camera.position.x=camera.position.x+0.5;
+      break;
+      case 'w':
+        camera.position.z=camera.position.z-0.5;
+      break;
+      case 's':
+        camera.position.z=camera.position.z+0.5;
+      break;
+      case 'q':
+        camera.rotation.y=camera.rotation.y+0.5;
+       break;
+       case 'e':
+        camera.rotation.y=camera.rotation.y-0.5;
+       break;
+      default:
+      break;
+    }
+}) */
+
   
   animate();
 }
